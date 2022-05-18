@@ -1,0 +1,45 @@
+openapi: 3.0.0 
+info: 
+  title: OpenBankingAPI
+  description: This an example of an Open Banking API. It is an interface to some
+    common financial microservices.
+  contact:
+    email: you@your-company.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+servers:
+# Added by API Auto Mocking Plugin
+# Added by API Auto Mocking Plugin
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/NewOrg_Demo/BankingAPI/1.0.0
+- description: SwaggerHub API Auto Mocking
+  url: https://virtserver.swaggerhub.com/SMARTBEAR_Melbourne/OpenBanking_API/1.0.0
+- url: https://virtserver.swaggerhub.com/SmartBearMelbourne/openBankingAPI/1.0.0
+  description: SwaggerHub API Auto Mocking
+paths:
+  "/account":
+    get:
+      tags:
+      - developers
+      summary: Retrieves account balance
+      description: |
+        By passing in the appropriate options, you can search for
+        available inventory in the system
+      operationId: getBalance
+      parameters:
+      - name: searchString
+        in: query
+        description: Pass an account ID
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: search results matching criteria
+        '400':
+          description: bad input parameter
+components: {}
